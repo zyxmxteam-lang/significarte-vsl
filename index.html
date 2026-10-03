@@ -384,7 +384,15 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     s.onload = function(){
       var p = new Vimeo.Player(ifr);
       p.on('play', onPlay);
-      p.on('timeupdate', function(d){ progress(d.seconds); });
+      // Antes de que termine, regresa al inicio: así nunca aparece la pantalla final de Vimeo
+      var looping = false;
+      p.on('timeupdate', function(d){
+        progress(d.seconds);
+        if(!looping && d.duration && d.duration - d.seconds < 0.6){
+          looping = true;
+          p.setCurrentTime(0).then(function(){ return p.play(); }).catch(function(){}).then(function(){ setTimeout(function(){ looping = false; }, 1500); });
+        }
+      });
       // Al terminar, vuelve a empezar (sin pantalla final de Vimeo)
       p.on('ended', function(){ p.setCurrentTime(0).then(function(){ return p.play(); }).catch(function(){}); });
     };
