@@ -91,6 +91,51 @@ h1 em{font-style:italic;color:var(--gold-soft)}
 .ph-empty .ic{width:56px;height:56px;border-radius:50%;background:var(--mist);display:flex;align-items:center;justify-content:center}
 .ph-empty .ic svg{width:26px;height:26px;fill:var(--gold-2)}
 
+/* Fecha + lugar */
+.ev{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;text-align:left;
+  padding:14px;border-radius:14px;background:linear-gradient(135deg,#F8F6F1,#F1EEE6);border:1px solid #EAE3D2}
+.ev + .ev{margin-top:10px}
+.cal{width:66px;border-radius:12px;overflow:hidden;background:#fff;text-align:center;box-shadow:0 8px 18px -10px rgba(36,48,68,.45);border:1px solid #E6E1D6}
+.cal .m{background:var(--wine);color:#fff;font-size:.58rem;font-weight:700;letter-spacing:.18em;padding:4px 0}
+.cal .d{font-family:var(--serif);font-size:1.55rem;font-weight:600;color:var(--ink);line-height:1;padding:7px 0 2px}
+.cal .y{font-size:.55rem;color:var(--muted);padding-bottom:6px;letter-spacing:.1em}
+.pin{width:66px;height:66px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--navy);box-shadow:0 8px 18px -10px rgba(36,48,68,.6)}
+.pin svg{width:28px;height:28px;fill:var(--gold)}
+.ev .t{font-weight:700;color:var(--ink);font-size:.95rem;line-height:1.3;text-wrap:balance}
+.ev .t.w{color:var(--wine)}
+.ev .s{font-size:.74rem;color:var(--ink-soft);margin-top:3px;line-height:1.45}
+.ev a{color:var(--gold-2);font-weight:600;text-decoration:none;font-size:.72rem;display:inline-flex;align-items:center;gap:4px;margin-top:4px}
+.ev a:hover{text-decoration:underline}
+
+/* Cards: Antonio + Meaning Making */
+.info{max-width:880px;margin:1.6rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
+@media (max-width:760px){.info{grid-template-columns:1fr;max-width:440px}}
+.icard{background:#fff;border-radius:6px;padding:1.5rem 1.35rem;box-shadow:0 18px 40px -26px rgba(36,48,68,.45);border-top:3px solid var(--gold)}
+.icard.dark{background:var(--navy);color:#DCE1EA;border-top-color:var(--gold)}
+.icard .head{display:flex;align-items:center;gap:12px;margin-bottom:.9rem}
+.icard .mono{width:52px;height:52px;border-radius:50%;flex:0 0 52px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:1.35rem;font-weight:600;color:#fff;background:var(--navy);border:2px solid var(--gold)}
+.icard .mono img{width:30px;height:auto;filter:brightness(0) invert(1)}
+.icard.dark .mono{background:rgba(255,255,255,.08)}
+.icard .lbl{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--gold-2)}
+.icard.dark .lbl{color:var(--gold-soft)}
+.icard h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;line-height:1.1;color:var(--ink)}
+.icard.dark h3{color:#fff}
+.icard p{font-size:.84rem;line-height:1.65;color:var(--ink-soft)}
+.icard.dark p{color:#DCE1EA}
+.icard p + p{margin-top:.6rem}
+.icard p b{color:var(--ink);font-weight:600}
+.icard.dark p b{color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
+.stats div{text-align:center}
+.stats strong{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--gold-2);line-height:1}
+.stats span{display:block;font-size:.6rem;color:var(--muted);margin-top:4px;line-height:1.3}
+.flow{display:flex;flex-direction:column;gap:8px;margin-top:1rem}
+.flow div{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(202,161,73,.25)}
+.flow b{font-family:var(--serif);font-size:1.05rem;color:var(--gold-soft);font-weight:600;min-width:84px}
+.flow span{font-size:.76rem;line-height:1.45;color:#DCE1EA}
+.quote{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.35;color:#fff;margin-top:1rem;padding-left:12px;border-left:2px solid var(--gold)}
+
 /* Footer */
 footer{background:var(--navy);color:#C9CFDA;text-align:center;padding:2.2rem 16px 2.6rem;font-size:.72rem;line-height:1.8}
 footer img{height:96px;width:auto;margin:0 auto .9rem;opacity:.95}
