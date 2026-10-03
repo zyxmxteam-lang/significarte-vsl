@@ -1,0 +1,99 @@
+/* ============================================================
+   SIGNIFICARTE · estilos compartidos (agendar.html y gracias.html)
+   Paleta The Meaning Learning Company
+   ============================================================ */
+:root{
+  --navy:#3A4861;
+  --navy-2:#2F3B51;
+  --navy-3:#243044;
+  --gold:#CAA149;
+  --gold-2:#B88F3A;
+  --gold-soft:#E4CF9C;
+  --wine:#8B0000;
+  --mist:#EEEDEF;
+  --ink:#3A4861;
+  --ink-soft:#5F6878;
+  --muted:#8F8F8F;
+  --line:#E2E2E2;
+  --wa:#25D366;
+  --serif:'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --sans:'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--mist);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+/* Barra superior */
+.topbar{background:#fff;border-bottom:1px solid var(--line)}
+.topbar .in{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;justify-content:center;gap:clamp(16px,4vw,32px)}
+.topbar .tm{height:64px;width:auto;max-width:none}
+.topbar .sg{height:66px;width:auto;max-width:none}
+.topbar .div{width:1px;height:48px;background:var(--line)}
+@media (max-width:420px){.topbar .tm{height:50px}.topbar .sg{height:50px}.topbar .div{height:38px}}
+
+/* Hero azul */
+.hero{
+  position:relative;overflow:hidden;color:#fff;text-align:center;
+  background:
+    radial-gradient(70% 90% at 85% 10%, rgba(120,140,175,.45) 0%, rgba(120,140,175,0) 60%),
+    radial-gradient(60% 80% at 0% 100%, rgba(36,48,68,.8) 0%, rgba(36,48,68,0) 70%),
+    linear-gradient(160deg,#4A5A78 0%, #3A4861 45%, #2B364B 100%);
+  padding:clamp(2rem,5vw,3rem) 16px clamp(7rem,16vw,8.5rem);
+}
+.hero .feather{position:absolute;pointer-events:none;opacity:.14;filter:brightness(0) invert(1)}
+.hero .feather.f1{height:140%;left:-6%;top:-20%;transform:rotate(-18deg)}
+.hero .feather.f2{height:95%;right:-4%;top:0;transform:rotate(22deg) scaleX(-1);opacity:.09}
+@media (max-width:700px){.hero .feather.f1{height:100%;left:-22%}.hero .feather.f2{height:70%;right:-16%}}
+.hero .in{position:relative;z-index:1;max-width:720px;margin:0 auto}
+.step{display:inline-flex;align-items:center;gap:.5rem;padding:.42rem .95rem;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(202,161,73,.45);
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold-soft);margin-bottom:1.1rem}
+.step .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,6vw,3.3rem);line-height:1.06;color:#fff;max-width:20ch;margin:0 auto;text-wrap:balance}
+h1 em{font-style:italic;color:var(--gold-soft)}
+.sub{margin:1rem auto 0;max-width:50ch;font-size:clamp(.92rem,2vw,1.02rem);line-height:1.7;color:#DCE1EA;font-weight:300}
+.sub b{color:#fff;font-weight:500}
+
+/* Contenido */
+.stage{position:relative;padding:0 16px 3rem;text-align:center}
+.panel{position:relative;z-index:2;max-width:760px;margin:calc(-1 * clamp(5.5rem,13vw,7rem)) auto 0;background:#fff;border-radius:16px;
+  box-shadow:0 30px 70px -30px rgba(36,48,68,.55);border-top:3px solid var(--gold);overflow:hidden}
+.panel .ph{padding:1.1rem 1.2rem .4rem;display:flex;align-items:center;justify-content:center;gap:.6rem;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold-2)}
+.panel .ph svg{width:16px;height:16px;fill:var(--gold-2)}
+
+.alts{max-width:760px;margin:1.6rem auto 0}
+.alts .or{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem}
+.alts .or::before,.alts .or::after{content:"";flex:1;height:1px;background:#D8D6D2}
+.alts .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.alts .grid{grid-template-columns:1fr}}
+
+.opt{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.3rem 1.1rem;border-radius:12px;background:#fff;
+  box-shadow:0 14px 30px -22px rgba(36,48,68,.5);text-align:center}
+.opt h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;line-height:1.15;color:var(--ink)}
+.opt p{font-size:.78rem;line-height:1.55;color:var(--ink-soft)}
+
+/* Botones */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;width:100%;
+  margin-top:.5rem;padding:.95rem 1.2rem;border-radius:100px;text-decoration:none;border:0;cursor:pointer;
+  background:var(--gold);color:#fff;font-family:var(--sans);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 14px 30px -12px rgba(202,161,73,.85);transition:background .2s ease, transform .2s ease}
+.btn:hover{background:var(--gold-2);transform:translateY(-2px)}
+.btn svg{width:17px;height:17px;fill:#fff;flex:0 0 17px}
+.btn.navy{background:var(--navy);box-shadow:0 14px 30px -14px rgba(36,48,68,.8)}
+.btn.navy:hover{background:var(--navy-3)}
+.btn.wa{background:var(--wa);box-shadow:0 14px 30px -14px rgba(37,211,102,.7)}
+.btn.wa:hover{background:#1EBE5A}
+.note{font-size:.68rem;color:var(--muted);margin-top:.2rem}
+
+/* Placeholder cuando falta configurar algo */
+.ph-empty{padding:3rem 1.4rem;display:flex;flex-direction:column;align-items:center;gap:.7rem;color:var(--ink-soft);font-size:.85rem;line-height:1.6}
+.ph-empty b{color:var(--ink)}
+.ph-empty .ic{width:56px;height:56px;border-radius:50%;background:var(--mist);display:flex;align-items:center;justify-content:center}
+.ph-empty .ic svg{width:26px;height:26px;fill:var(--gold-2)}
+
+/* Footer */
+footer{background:var(--navy);color:#C9CFDA;text-align:center;padding:2.2rem 16px 2.6rem;font-size:.72rem;line-height:1.8}
+footer img{height:96px;width:auto;margin:0 auto .9rem;opacity:.95}
+footer a{color:var(--gold-soft);text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
