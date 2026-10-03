@@ -169,35 +169,6 @@ h1 em{font-style:italic;color:var(--gold-soft)}
 .ev a{color:var(--gold-2);font-weight:600;text-decoration:none;font-size:.72rem;display:inline-flex;align-items:center;gap:4px;margin-top:4px}
 .ev a:hover{text-decoration:underline}
 
-/* Cards: Antonio + Meaning Making */
-.info{max-width:880px;margin:1.6rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
-@media (max-width:760px){.info{grid-template-columns:1fr;max-width:440px}}
-.icard{background:#fff;border-radius:6px;padding:1.5rem 1.35rem;box-shadow:0 18px 40px -26px rgba(36,48,68,.45);border-top:3px solid var(--gold)}
-.icard.dark{background:var(--navy);color:#DCE1EA;border-top-color:var(--gold)}
-.icard .head{display:flex;align-items:center;gap:12px;margin-bottom:.9rem}
-.icard .mono{width:52px;height:52px;border-radius:50%;flex:0 0 52px;display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:1.35rem;font-weight:600;color:#fff;background:var(--navy);border:2px solid var(--gold)}
-.icard .mono img{width:30px;height:auto;filter:brightness(0) invert(1)}
-.icard.dark .mono{background:rgba(255,255,255,.08)}
-.icard .lbl{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--gold-2)}
-.icard.dark .lbl{color:var(--gold-soft)}
-.icard h3{font-family:var(--serif);font-weight:500;font-size:1.45rem;line-height:1.1;color:var(--ink)}
-.icard.dark h3{color:#fff}
-.icard p{font-size:.84rem;line-height:1.65;color:var(--ink-soft)}
-.icard.dark p{color:#DCE1EA}
-.icard p + p{margin-top:.6rem}
-.icard p b{color:var(--ink);font-weight:600}
-.icard.dark p b{color:#fff}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
-.stats div{text-align:center}
-.stats strong{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--gold-2);line-height:1}
-.stats span{display:block;font-size:.6rem;color:var(--muted);margin-top:4px;line-height:1.3}
-.flow{display:flex;flex-direction:column;gap:8px;margin-top:1rem}
-.flow div{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(202,161,73,.25)}
-.flow b{font-family:var(--serif);font-size:1.05rem;color:var(--gold-soft);font-weight:600;min-width:84px}
-.flow span{font-size:.76rem;line-height:1.45;color:#DCE1EA}
-.quote{font-family:var(--serif);font-style:italic;font-size:1.12rem;line-height:1.35;color:#fff;margin-top:1rem;padding-left:12px;border-left:2px solid var(--gold)}
-
 .btn{
   position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
   margin-top:1.25rem;padding:.95rem 2.2rem;border-radius:100px;text-decoration:none;
@@ -332,41 +303,11 @@ footer a{color:var(--gold-soft);text-decoration:none}
 
         <a href="agendar.html" class="btn" id="ctaBtn">
           <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11zm-8.5-2.3l-3.2-3.2 1.4-1.4 1.8 1.8 4.8-4.8 1.4 1.4z"/></svg>
-          <span>Asegurar mi lugar</span>
+          <span>Apartar mi lugar</span>
         </a>
         <div class="scarcity">Preventa con 25% de descuento hasta el 9 de octubre. <b>Cupo limitado.</b></div>
       </div>
 
-      <div class="info">
-        <article class="icard">
-          <div class="head">
-            <div class="mono">AR</div>
-            <div><div class="lbl">Quién te guía</div><h3>Antonio de Rosenzweig</h3></div>
-          </div>
-          <p>Más de <b>35 años</b> trabajando alrededor de una sola pregunta: <b>¿qué mueve a los seres humanos?</b></p>
-          <p>La buscó organizando eventos de enorme complejidad, trabajando en crisis y desastres, estudiando sistemas humanos e interviniendo en procesos de transformación cultural.</p>
-          <p>Hasta que encontró la diferencia: las personas no se mueven por lo que entienden. <b>Se mueven por lo que las cosas significan para ellas.</b></p>
-          <div class="stats">
-            <div><strong>35+</strong><span>años de estudio</span></div>
-            <div><strong>5,000+</strong><span>personas en el programa</span></div>
-            <div><strong>90%</strong><span>retiene los conceptos</span></div>
-          </div>
-        </article>
-
-        <article class="icard dark">
-          <div class="head">
-            <div class="mono"><img src="img/feather.webp" alt="" /></div>
-            <div><div class="lbl">La idea detrás de todo</div><h3>¿Qué es el Meaning Making?</h3></div>
-          </div>
-          <p>Es la forma en que construyes significado. <b>No actúas por lo que sabes: actúas por lo que algo significa para ti.</b></p>
-          <div class="flow">
-            <div><b>Significado</b><span>Lo que cada cosa quiere decir para ti. Casi nunca lo eliges: lo heredas.</span></div>
-            <div><b>Motivo</b><span>Lo que te importa y te mueve. Nace directo del significado.</span></div>
-            <div><b>Acción</b><span>Lo que haces, pospones o repites. Tu realidad, visible.</span></div>
-          </div>
-          <div class="quote">“Lo que pasó es una cosa. Lo que significó para ti, otra.”</div>
-        </article>
-      </div>
     </div>
   </div>
 
