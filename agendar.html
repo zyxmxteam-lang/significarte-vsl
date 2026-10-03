@@ -157,7 +157,7 @@
 var CONFIG = {
   // Link de tu evento en iClosed (Share → copia el link). Ej: "https://app.iclosed.io/e/tu-usuario/llamada-significarte"
   // En iClosed configura la redirección después de agendar a: https://zyxmxteam-lang.github.io/significarte-vsl/gracias.html
-  ICLOSED_URL: "",
+  ICLOSED_URL: "https://app.iclosed.io/e/significarte/asegura-tu-lugar-en-significarte-llamada-de-15-m",
 
   // Compra directa del boleto
   TICKET_URL: "https://live.eventtia.com/es/significarte",
@@ -184,9 +184,9 @@ document.querySelectorAll('.js-wa').forEach(function(a){
   var w = document.createElement('div');
   w.className = 'iclosed-widget';
   w.setAttribute('data-url', u);
-  w.setAttribute('title', 'Llamada SignificARTE');
+  w.setAttribute("title", "Asegura tu lugar en SignificARTE | Llamada de 15 m");
   w.style.width = '100%';
-  w.style.height = '640px';
+  w.style.height = "620px";
   box.appendChild(w);
   var s = document.createElement('script');
   s.src = 'https://app.iclosed.io/assets/widget.js';
