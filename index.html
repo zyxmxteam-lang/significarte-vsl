@@ -92,14 +92,14 @@ h1 em{font-style:italic;color:var(--gold-soft)}
 
 /* ---------- Bloque claro con el VSL ---------- */
 .stage{position:relative;text-align:center;padding:0 16px 3.2rem}
-.vsl{position:relative;margin:calc(-1 * clamp(11rem,36vw,15rem)) auto 0;width:min(100%,390px,calc(76vh * .5625));min-width:min(100%,260px);z-index:2}
+.vsl{position:relative;margin:calc(-1 * clamp(11rem,36vw,15rem)) auto 0;width:min(100%,460px,calc(74vh * .75));min-width:min(100%,280px);z-index:2}
 .vsl-frame{
-  position:relative;width:100%;aspect-ratio:9/16;border-radius:22px;overflow:hidden;
+  position:relative;width:100%;aspect-ratio:3/4;border-radius:22px;overflow:hidden;
   background:linear-gradient(170deg,#4A5A78 0%,#2B364B 100%);
   border:6px solid #fff;
   box-shadow:0 30px 70px -25px rgba(36,48,68,.6), 0 0 0 1px rgba(202,161,73,.5);
 }
-.vsl-frame iframe,.vsl-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;object-fit:cover}
+.vsl-frame iframe,.vsl-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;object-fit:contain}
 
 .live-badge{
   position:absolute;top:10px;left:10px;z-index:3;display:flex;align-items:center;gap:.32rem;
@@ -233,7 +233,7 @@ footer a{color:var(--gold-soft);text-decoration:none}
 
 <main class="stage">
 
-  <!-- VSL VERTICAL 9:16. Pon el link en CONFIG.VIDEO_URL (abajo). -->
+  <!-- VSL VERTICAL 3:4. Pon el link en CONFIG.VIDEO_URL (abajo). -->
   <div class="vsl">
     <div class="vsl-frame" id="vslFrame">
       <div class="poster" id="poster">
@@ -304,7 +304,7 @@ footer a{color:var(--gold-soft);text-decoration:none}
 /* ============ CONFIGURACIÓN — edita solo esto ============ */
 var CONFIG = {
   // VSL vertical: link de Vimeo (recomendado) o de un .mp4. Vacío = póster de prueba.
-  VIDEO_URL: "",
+  VIDEO_URL: "https://player.vimeo.com/video/1232547051",
 
   // Segundos de video vistos antes de que aparezca el botón. 200 = 3:20
   REVEAL_SECONDS: 200,
