@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Llamada agendada · SignificARTE</title>
+<meta name="description" content="Tu llamada con el equipo de SignificARTE está agendada." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#3A4861" />
+<link rel="icon" href="img/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/site.css" />
+<style>
+.ok{width:58px;height:58px;border-radius:50%;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;background:var(--gold);box-shadow:0 0 0 8px rgba(202,161,73,.2)}
+.ok svg{width:30px;height:30px;fill:#fff}
+
+.vwrap{position:relative;z-index:2;margin:calc(-1 * clamp(5.5rem,13vw,7rem)) auto 0;width:min(100%,420px,calc(70vh * .75))}
+.vframe{position:relative;width:100%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:6px solid #fff;
+  background:linear-gradient(170deg,#4A5A78 0%,#2B364B 100%);box-shadow:0 30px 70px -25px rgba(36,48,68,.6), 0 0 0 1px rgba(202,161,73,.5)}
+.vframe iframe,.vframe video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;object-fit:contain}
+.vph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;color:#fff;padding:1.5rem}
+.vph .pf{position:absolute;height:88%;right:-18%;bottom:-6%;opacity:.13;filter:brightness(0) invert(1);transform:rotate(14deg)}
+.vph .play{position:relative;width:70px;height:70px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
+.vph .play svg{width:26px;height:26px;margin-left:4px;fill:#fff}
+.vph span{position:relative;font-family:var(--serif);font-style:italic;font-size:1.3rem;line-height:1.25;max-width:88%}
+.vcap{margin-top:.9rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+.blk{max-width:760px;margin:2rem auto 0;text-align:left}
+.blk > h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,4.5vw,2.2rem);text-align:center;color:var(--ink);line-height:1.1}
+.blk > .k{text-align:center;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--gold-2);margin-bottom:.4rem}
+
+.steps{display:grid;gap:12px;margin-top:1.2rem}
+.st{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:#fff;border-radius:12px;padding:1.05rem 1.1rem;box-shadow:0 14px 30px -24px rgba(36,48,68,.5)}
+.st .n{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.2rem;font-weight:600}
+.st h3{font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.35}
+.st p{font-size:.8rem;line-height:1.6;color:var(--ink-soft);margin-top:2px}
+
+.event{margin-top:1.2rem;background:var(--navy);color:#DCE1EA;border-radius:14px;padding:1.4rem 1.2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+@media (max-width:600px){.event{grid-template-columns:1fr}}
+.event div{padding:.4rem}
+.event svg{width:22px;height:22px;fill:var(--gold);margin:0 auto .4rem;display:block}
+.event b{display:block;color:#fff;font-weight:600;font-size:.9rem}
+.event span{font-size:.74rem}
+
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.2rem}
+@media (max-width:700px){.mods{grid-template-columns:1fr}}
+.mod{background:#fff;border-radius:12px;padding:1.1rem;border-top:3px solid var(--gold);box-shadow:0 14px 30px -24px rgba(36,48,68,.5)}
+.mod .m{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold-2)}
+.mod h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;color:var(--ink);margin-top:.2rem;line-height:1.15}
+.mod p{font-size:.78rem;line-height:1.55;color:var(--ink-soft);margin-top:.35rem}
+
+.price{margin-top:1.2rem;background:#fff;border-radius:14px;padding:1.4rem 1.2rem;text-align:center;box-shadow:0 18px 40px -26px rgba(36,48,68,.5)}
+.price .tag{display:inline-block;padding:.3rem .8rem;border-radius:100px;background:rgba(139,0,0,.08);color:var(--wine);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.price .now{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1;margin-top:.6rem}
+.price .now small{font-family:var(--sans);font-size:.75rem;color:var(--muted);font-weight:400}
+.price .was{font-size:.78rem;color:var(--muted);margin-top:.3rem}
+.price .was s{text-decoration-color:var(--wine)}
+.price .msi{font-size:.76rem;color:var(--ink-soft);margin-top:.5rem}
+.price .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:520px;margin:1rem auto 0}
+@media (max-width:520px){.price .row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="in">
+    <img class="tm" src="img/tmlc-logo.png" alt="The Meaning Learning Company" width="552" height="491" />
+    <span class="div" aria-hidden="true"></span>
+    <img class="sg" src="img/significarte-logo.webp" alt="SignificARTE · El punto de partida" width="900" height="368" />
+  </div>
+</header>
+
+<section class="hero">
+  <img class="feather f1" src="img/feather.webp" alt="" aria-hidden="true" />
+  <img class="feather f2" src="img/feather.webp" alt="" aria-hidden="true" />
+  <div class="in">
+    <div class="ok"><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg></div>
+    <h1>¡Listo! Tu llamada <em>está agendada.</em></h1>
+    <p class="sub">Te llegó la confirmación con el día y la hora. <b>Antes de la llamada, mira este video</b>: te va a ayudar a sacarle el máximo provecho.</p>
+  </div>
+</section>
+
+<main class="stage">
+
+  <div class="vwrap">
+    <div class="vframe" id="vframe">
+      <div class="vph" id="vph">
+        <img class="pf" src="img/feather.webp" alt="" aria-hidden="true" />
+        <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span>Un mensaje de Antonio antes de tu llamada</span>
+      </div>
+    </div>
+  </div>
+  <div class="vcap">Sube el volumen · este video tiene audio</div>
+
+  <section class="blk">
+    <div class="k">Lo que sigue</div>
+    <h2>Así preparas tu llamada</h2>
+    <div class="steps">
+      <div class="st"><div class="n">1</div><div><h3>Revisa tu confirmación</h3><p>Te enviamos el día, la hora y el link de la llamada. Agrégala a tu calendario para no perderla.</p></div></div>
+      <div class="st"><div class="n">2</div><div><h3>Piensa en una sola cosa que cambió en tu vida</h3><p>Una relación, un trabajo, una etapa… Llévala a la llamada. Desde ahí vemos si SignificARTE es para ti.</p></div></div>
+      <div class="st"><div class="n">3</div><div><h3>Conéctate puntual y en un lugar tranquilo</h3><p>Son unos minutos. Si algo cambia, avísanos por WhatsApp y la movemos.</p></div></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="k">El taller</div>
+    <h2>SignificARTE · el punto de partida</h2>
+    <div class="event">
+      <div><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/></svg><b>Sáb 24 y Dom 25</b><span>de octubre 2026</span></div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg><b>Hotel Andaz</b><span>Condesa · CDMX</span></div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg><b>Antonio de Rosenzweig</b><span>2 días presenciales</span></div>
+    </div>
+    <div class="mods">
+      <div class="mod"><div class="m">Módulo 1</div><h3>Entender diferente</h3><p>Cómo se construye un significado y por qué casi nunca lo eliges: lo heredas.</p></div>
+      <div class="mod"><div class="m">Módulo 2</div><h3>Cómo significas tú</h3><p>Mapea los significados que hoy mueven tus decisiones en pareja, familia y trabajo.</p></div>
+      <div class="mod"><div class="m">Módulo 3</div><h3>Relacionar para transformar</h3><p>Construye significados nuevos, a propósito, para la etapa que estás viviendo.</p></div>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="price">
+      <span class="tag">Preventa · 25% de descuento</span>
+      <div class="now">$5,300 <small>MXN · IVA incluido</small></div>
+      <div class="was">Precio normal <s>$7,100</s> · válido hasta el 9 de octubre</div>
+      <div class="msi">o 3 pagos de $1,767 · 6 pagos de $884 sin intereses</div>
+      <div class="row">
+        <a class="btn navy" id="ticketBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 010 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 010-4zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/></svg>
+          Apartar mi lugar ya
+        </a>
+        <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+          Ayuda por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <img src="img/tmlc-logo-white.png" alt="The Meaning Learning Company" width="552" height="491" />
+  © <span id="yr"></span> The Meaning Learning Company · SignificARTE
+</footer>
+
+<script>
+/* ============ CONFIGURACIÓN — edita solo esto ============ */
+var CONFIG = {
+  // Video de la página de gracias: link de Vimeo o .mp4. Vacío = portada de prueba.
+  VIDEO_URL: "",
+
+  TICKET_URL: "https://live.eventtia.com/es/significarte",
+  WHATSAPP: "525540182250"
+};
+/* =========================================================== */
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('ticketBtn').href = CONFIG.TICKET_URL;
+document.getElementById('waBtn').href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" +
+  encodeURIComponent("Hola, acabo de agendar mi llamada de SignificARTE y tengo una pregunta.");
+if(window.fbq) fbq('track','Schedule');
+
+(function(){
+  var u = (CONFIG.VIDEO_URL || '').trim();
+  if(!u) return;
+  var frame = document.getElementById('vframe');
+  document.getElementById('vph').remove();
+  var vm = u.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/([\w]+))?/), el;
+  if(vm){
+    el = document.createElement('iframe');
+    el.src = 'https://player.vimeo.com/video/'+vm[1]+'?'+(vm[2]?'h='+vm[2]+'&':'')+'badge=0&autopause=0&playsinline=1&loop=1&title=0&byline=0&portrait=0&dnt=1';
+    el.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+    el.title = 'SignificARTE · Mensaje de Antonio';
+  } else {
+    el = document.createElement('video');
+    el.src = u; el.controls = true; el.playsInline = true; el.loop = true;
+  }
+  frame.appendChild(el);
+})();
+</script>
+
+</body>
+</html>
