@@ -15,6 +15,21 @@
 <style>
 #cal{min-height:640px}
 #cal .iclosed-widget{width:100%;min-height:640px}
+.evin{padding:1.2rem}
+.evp .price{margin-top:12px;text-align:center;padding:1rem;border-radius:14px;border:1px dashed #DCCFA9}
+.price .tag{display:inline-block;padding:.3rem .8rem;border-radius:100px;background:rgba(139,0,0,.08);color:var(--wine);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.5}
+.price .now{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--ink);line-height:1;margin-top:.55rem}
+.price .now small{font-family:var(--sans);font-size:.72rem;color:var(--muted);font-weight:400}
+.price .was{font-size:.74rem;color:var(--muted);margin-top:.35rem;line-height:1.5}
+.price .was s{text-decoration-color:var(--wine)}
+.sec{max-width:760px;margin:2.4rem auto 0}
+.sec > .k{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--gold-2);margin-bottom:.35rem}
+.sec > h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4.6vw,2.3rem);color:var(--ink);line-height:1.1}
+.sec > .lead{font-size:.86rem;color:var(--ink-soft);line-height:1.6;max-width:46ch;margin:.5rem auto 0}
+.calp{margin:1.1rem auto 0 !important}
+.sec .info{margin-top:1.2rem}
+.alts .grid{gap:12px}
+.alts > .btn{margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -31,40 +46,104 @@
   <img class="feather f1" src="img/feather.webp" alt="" aria-hidden="true" />
   <img class="feather f2" src="img/feather.webp" alt="" aria-hidden="true" />
   <div class="in">
-    <span class="step"><span class="dot"></span> Último paso · 24 y 25 de octubre · CDMX</span>
-    <h1>Elige el día y la hora para <em>asegurar tu lugar.</em></h1>
-    <p class="sub">Es una llamada corta con el equipo de SignificARTE. Resolvemos tus dudas, vemos si el taller es para ti y <b>apartamos tu lugar en preventa</b>.</p>
+    <span class="step"><span class="dot"></span> 24 y 25 de octubre · CDMX</span>
+    <h1>Estás a un paso de <em>apartar tu lugar.</em></h1>
+    <p class="sub">Agenda una llamada corta con el equipo, compra tu boleto directo o escríbenos por WhatsApp. <b>Tú eliges cómo.</b></p>
   </div>
 </section>
 
 <main class="stage">
 
-  <div class="panel">
-    <div class="ph"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/></svg> Agenda tu llamada</div>
-    <div id="cal"></div>
-  </div>
-
-  <div class="alts">
-    <div class="or">o si prefieres</div>
-    <div class="grid">
-      <div class="opt">
-        <h3>Apartar mi lugar sin hablar con nadie</h3>
-        <p>Compra tu boleto directo en línea. Preventa con 25% de descuento hasta el 9 de octubre.</p>
-        <a class="btn navy" id="ticketBtn" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 010 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 010-4zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/></svg>
-          Apartar mi lugar
-        </a>
+  <!-- Detalles del evento -->
+  <div class="panel evp">
+    <div class="evin">
+      <div class="ev">
+        <div class="cal"><div class="m">OCTUBRE</div><div class="d">24·25</div><div class="y">2026</div></div>
+        <div>
+          <div class="t w">Sábado 24 y Domingo 25 de octubre</div>
+          <div class="s">2 días presenciales con Antonio de Rosenzweig</div>
+        </div>
       </div>
-      <div class="opt">
-        <h3>¿Tienes una duda rápida?</h3>
-        <p>Escríbenos y te respondemos por WhatsApp.</p>
-        <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
-          Ayuda por WhatsApp
-        </a>
+      <div class="ev">
+        <div class="pin"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></div>
+        <div>
+          <div class="t">Hotel Andaz</div>
+          <div class="s">Condesa · Ciudad de México</div>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Andaz+Condesa+Ciudad+de+Mexico" target="_blank" rel="noopener">Ver en el mapa →</a>
+        </div>
+      </div>
+      <div class="price">
+        <span class="tag">Preventa · 25% de descuento hasta el 9 de octubre</span>
+        <div class="now">$5,300 <small>MXN · IVA incluido</small></div>
+        <div class="was">Precio normal <s>$7,100</s> · o 3 pagos de $1,767 / 6 de $884 sin intereses</div>
       </div>
     </div>
   </div>
+
+  <!-- Calendario iClosed -->
+  <section class="sec" id="agenda">
+    <div class="k">Opción recomendada</div>
+    <h2>Agenda una llamada</h2>
+    <p class="lead">Unos minutos con el equipo para resolver tus dudas y apartar tu lugar en preventa.</p>
+    <div class="panel calp">
+      <div class="ph"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/></svg> Elige el día y la hora</div>
+      <div id="cal"></div>
+    </div>
+  </section>
+
+  <!-- Otras opciones -->
+  <section class="sec alts">
+    <div class="or">o si prefieres</div>
+    <div class="grid">
+      <a class="btn navy js-ticket" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 010 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 010-4zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/></svg> Comprar mi boleto sin hablar con nadie</a>
+      <a class="btn wa js-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg> Necesito ayuda por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Más información -->
+  <section class="sec">
+    <div class="k">Más información</div>
+    <h2>Lo que necesitas saber</h2>
+      <div class="info">
+        <article class="icard">
+          <div class="head">
+            <div class="mono">AR</div>
+            <div><div class="lbl">Quién te guía</div><h3>Antonio de Rosenzweig</h3></div>
+          </div>
+          <p>Más de <b>35 años</b> trabajando alrededor de una sola pregunta: <b>¿qué mueve a los seres humanos?</b></p>
+          <p>La buscó organizando eventos de enorme complejidad, trabajando en crisis y desastres, estudiando sistemas humanos e interviniendo en procesos de transformación cultural.</p>
+          <p>Hasta que encontró la diferencia: las personas no se mueven por lo que entienden. <b>Se mueven por lo que las cosas significan para ellas.</b></p>
+          <div class="stats">
+            <div><strong>35+</strong><span>años de estudio</span></div>
+            <div><strong>5,000+</strong><span>personas en el programa</span></div>
+            <div><strong>90%</strong><span>retiene los conceptos</span></div>
+          </div>
+        </article>
+
+        <article class="icard dark">
+          <div class="head">
+            <div class="mono"><img src="img/feather.webp" alt="" /></div>
+            <div><div class="lbl">La idea detrás de todo</div><h3>¿Qué es el Meaning Making?</h3></div>
+          </div>
+          <p>Es la forma en que construyes significado. <b>No actúas por lo que sabes: actúas por lo que algo significa para ti.</b></p>
+          <div class="flow">
+            <div><b>Significado</b><span>Lo que cada cosa quiere decir para ti. Casi nunca lo eliges: lo heredas.</span></div>
+            <div><b>Motivo</b><span>Lo que te importa y te mueve. Nace directo del significado.</span></div>
+            <div><b>Acción</b><span>Lo que haces, pospones o repites. Tu realidad, visible.</span></div>
+          </div>
+          <div class="quote">“Lo que pasó es una cosa. Lo que significó para ti, otra.”</div>
+        </article>
+      </div>
+  </section>
+
+  <section class="sec alts">
+    <div class="or">¿Listo para dar el paso?</div>
+    <a class="btn" href="#agenda"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/></svg> Agendar llamada</a>
+    <div class="grid">
+      <a class="btn navy js-ticket" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 10V6a2 2 0 00-2-2H4a2 2 0 00-2 2v4a2 2 0 010 4v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 010-4zm-9 7.5h-2v-2h2v2zm0-4.5h-2v-2h2v2zm0-4.5h-2v-2h2v2z"/></svg> Comprar mi boleto sin hablar con nadie</a>
+      <a class="btn wa js-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg> Necesito ayuda por WhatsApp</a>
+    </div>
+  </section>
 
 </main>
 
@@ -89,15 +168,16 @@ var CONFIG = {
 /* =========================================================== */
 
 document.getElementById('yr').textContent = new Date().getFullYear();
-document.getElementById('ticketBtn').href = CONFIG.TICKET_URL;
-document.getElementById('waBtn').href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" +
-  encodeURIComponent("Hola, vi el video de SignificARTE y tengo una duda antes de apartar mi lugar.");
+document.querySelectorAll('.js-ticket').forEach(function(a){ a.href = CONFIG.TICKET_URL; });
+document.querySelectorAll('.js-wa').forEach(function(a){
+  a.href = "https://wa.me/" + CONFIG.WHATSAPP + "?text=" + encodeURIComponent("Hola, vi el video de SignificARTE y necesito ayuda para apartar mi lugar.");
+});
 
 (function(){
   var box = document.getElementById('cal');
   var u = (CONFIG.ICLOSED_URL || '').trim();
   if(!u){
-    box.innerHTML = '<div class="ph-empty"><span class="ic"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/></svg></span><b>Aquí va el calendario de iClosed</b>Mientras tanto puedes apartar tu lugar directo o escribirnos por WhatsApp.</div>';
+    box.innerHTML = '<div class="ph-empty"><span class="ic"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2zm0 16H5V9h14v11z"/></svg></span><b>Aquí va el calendario de iClosed</b>Pega el link de tu evento en CONFIG.ICLOSED_URL.</div>';
     box.style.minHeight = '0';
     return;
   }
