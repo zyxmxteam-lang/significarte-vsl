@@ -375,7 +375,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   if(vm){
     poster.remove();
     var ifr = document.createElement('iframe');
-    ifr.src = 'https://player.vimeo.com/video/'+vm[1]+'?'+(vm[2]?'h='+vm[2]+'&':'')+'badge=0&autopause=0&playsinline=1';
+    ifr.src = 'https://player.vimeo.com/video/'+vm[1]+'?'+(vm[2]?'h='+vm[2]+'&':'')+'badge=0&autopause=0&playsinline=1&loop=1&title=0&byline=0&portrait=0&dnt=1';
     ifr.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
     ifr.title = 'SignificARTE · VSL';
     frame.insertBefore(ifr, frame.firstChild);
@@ -385,6 +385,8 @@ document.getElementById('yr').textContent = new Date().getFullYear();
       var p = new Vimeo.Player(ifr);
       p.on('play', onPlay);
       p.on('timeupdate', function(d){ progress(d.seconds); });
+      // Al terminar, vuelve a empezar (sin pantalla final de Vimeo)
+      p.on('ended', function(){ p.setCurrentTime(0).then(function(){ return p.play(); }).catch(function(){}); });
     };
     s.onerror = function(){ ifr.addEventListener('load', function(){ onPlay(); clock(); }); };
     document.head.appendChild(s);
